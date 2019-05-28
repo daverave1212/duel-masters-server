@@ -1,4 +1,10 @@
 
+function getFirstNull(arr){
+	for(let i = 0; i<arr.length; i++){
+		if(arr[i] == null) return i
+	}
+	return -1
+}
 
 function findInArray(arr, prop, val){
 	for(let i = 0; i<arr.length; i++){
@@ -39,6 +45,12 @@ function hasnt(){
 	return false
 }
 
+function forEachKey(object, func){
+	for (var key in object) {
+		if (!object.hasOwnProperty(key)) continue;
+		func(key);
+	}
+}
 
 
 module.exports.findInArray = findInArray
@@ -46,6 +58,8 @@ module.exports.randomOf = randomOf
 module.exports.randomInt = randomInt
 module.exports.has = has
 module.exports.hasnt = hasnt
+module.exports.forEachKey = forEachKey
+module.exports.getFirstNull = getFirstNull
 
 
 
